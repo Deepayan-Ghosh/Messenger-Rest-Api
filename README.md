@@ -90,7 +90,9 @@ is sent back and the `Content-type: application/json` is set ont to the response
 
 
 - `@Consumes` - PUT and POST requests contain payload in the request body which can be in any format. The format of the 
-request payload supported by our api endpoint is mentioned at the method level using `@Consumes`. For example, an api 
+request payload supported by our api endpoint is mentioned at the method level using `@Consumes`. It tells JAX-RS
+that the endpoint expects the incoming request payload to be in these formats, so that JAX-RS can appropriately
+transform the incoming request payload into object and inject them into the method parameter. For example, an api 
 endpoint method may accept JSON and the request payload may be in XML. In such case, the endpoint cannot handle the request
 and sends an error code status `415 Unsupported Media Type` in the response. The format of the request payload is given
 in the `Content-type` request header.
