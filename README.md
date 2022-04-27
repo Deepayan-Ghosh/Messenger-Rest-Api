@@ -57,6 +57,11 @@ DELETE http://localhost:8080/rest_messenger_app/rest/messages/{messageId}/commen
 
 The endpoints are present in JAX-RS classes `MessageResource`,`ProfileResource` and `CommentResource`.
 
+## Deployment
+This project has been developed to be deployed on servlet container like Tomcat which support servlet 2.5 and above.
+Traditional deployment descriptor is used for deployment, where all incoming requests at `/rest/*` 
+are redirected to the Jersey container `org.glassfish.jersey.servlet.ServletContainer` which processes the remaining 
+portion of the resource URI endpoints and hands over control to appropriate methods in our JAX-RS resource classes.
 
 ## Concepts / Annotations Covered In This Project
 - `@Path` - used to map a class / method to handle a URI invocation. In JAX-RS, for each resource we have a class which contains the 
